@@ -1,7 +1,8 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')
 const browserSync = require('browser-sync').create();
-
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 //compile scss into css
 function style(){
     //1. where is my scss file
@@ -23,5 +24,11 @@ function watch() {
     gulp.watch('./*.html').on('change', browserSync.reload);
     gulp.watch('./js/**/*.js').on('change', browserSync.reload);
 }
+gulp.task('uglify', async function(){
+    gulp.src('js/**/*.js')
+    .pipe(uglify())
+   // .pipe( rename({ suffix:'min'}))
+    .pipe(gulp.dest('js/minified'));
+})
 exports.style = style;
 exports.watch = watch;

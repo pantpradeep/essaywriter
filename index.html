@@ -7,19 +7,21 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <title>All Essay Writer</title>
   <link href="css/style.css" rel="stylesheet">
   <link href="css/owl.carousel.min.css" rel="stylesheet">
   <link href="css/owl.theme.default.min.css" rel="stylesheet">
+  <link href="css/jquery.datetimepicker.css" rel="stylesheet">
 </head>
 
 <body>
+  
   <header class="pt-3 pb-3">
     <div class="wrapper">
       <div class="row align-center">
         <div class="col-3">
-          <img src="img/logo.png" alt="AllEssay Writing"/>
+          <a href="#"><img src="img/logo.png" alt="AllEssay Writing"/></a>
         </div>
         <div class="col-9">
           <div class="row m-0 justify-end">
@@ -31,10 +33,10 @@
                 <li>
                   <a href="#" class="current">Services</a>
                   <ul class="subMenu">
-                    <li><a href="#">Prices</a></li>
-                    <li><a href="#">Reviews</a></li>
-                    <li><a href="#">Earn Money</a></li>
-                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">SubMenu Item 1</a></li>
+                    <li><a href="#">SubMenu Item 2</a></li>
+                    <li><a href="#">SubMenu Item 3</a></li>
+                    <li><a href="#">SubMenu Item 4</a></li>
                   </ul>
                 </li>
                 <li><a href="#">Prices</a></li>
@@ -76,7 +78,7 @@
               <div class="form-group">
                 <div class="row">
                   <div class="col-8 pr-0">
-                    <input type="text" class="form-control pageField" id="text" placeholder="1 Page" style="display:block;">
+                    <input id="datetimepicker" class="form-control" type="text" placeholder="3 Hours/ Tue, Mar 5" >
                   </div>
                   <div class="col-4 pl-0">
                     <select class="form-control">
@@ -91,8 +93,8 @@
               <div class="form-group">
                 <div class="row">
                   <div class="col-6 sideF pr-7">
-                    <input type="text" class="form-control pageField" id="text" placeholder="1 Page" style="display:block;">
-                    <input type="text" class="form-control wordField" id="text" placeholder="20 Words" style="display:none;">
+                    <input type="text" class="form-control pageField" id="text2" placeholder="1 Page" style="display:block;">
+                    <input type="text" class="form-control wordField" id="text3" placeholder="20 Words" style="display:none;">
                   </div>
                   <div class="col-6 pl-7">
                     <div class="row">
@@ -712,7 +714,7 @@
           </ul>
           <ul>
             <li>
-              <a href="" target="_blank" class="address">
+              <a href="https://goo.gl/maps/9tZGAPYbdEsV9XPX8" target="_blank" class="address">
                 447 Broadway , 2nd FL #166 New York, NY 10013
               </a>
             </li>
@@ -763,10 +765,13 @@
     </a>
     <a class="chatNow" href="#"><img src="img/chat.png" alt=""/></a>
   </div>
-  <!-- Bootstrap core JavaScript -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/owl.carousel.js"></script>
-  <script src="js/script.js"></script>
+  
+  <!-- Bootstrap core JavaScript --> 
+  <script src="js/minified/jquery.js"></script>
+  <script src="js/minified/php-date-formatter.js"></script>
+  <script src="js/minified/jquery.datetimepicker.js"></script>
+  <script src="js/minified/owl.carousel.js"></script>
+  <script src="js/minified/script.js"></script>
 </body>
 
 </html>

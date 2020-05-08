@@ -6,6 +6,8 @@ $ipad: "(min-width:768px) and (max-width:991px)";
 $old-desk: "(min-width:992px) and (max-width:1199px)";
 $minipad: "(min-width:768px)";
 $minipadToOlddesk: "(min-width:768px) and (max-width:1199px)";
+$oldMobileLandscape:"(min-width:480px) and (max-width:599px)";
+$mobilePortrait:"(max-width: 479px)";
 
 $theme-color:#243b7f;
 $content-color:#425262;
@@ -59,7 +61,7 @@ h2.title{
     color:$theme-color;
     margin-bottom: 5px;
     font-weight: 400;
-    @media (max-width: 479px) {
+    @media #{$mobilePortrait} {
         font-size: 26px;
         padding:0 0px;
     }
@@ -69,7 +71,7 @@ h2.title{
 }
 .defaultSpace{
     padding:55px 0;
-    @media (max-width: 479px) {
+    @media #{$mobilePortrait} {
         padding:35px 0;
     }
 }
@@ -77,7 +79,7 @@ h2.title{
     font-size:20px;
     color:$content-color;
     margin-bottom: 50px;
-    @media (max-width: 479px) {
+    @media #{$mobilePortrait} {
         font-size: 18px;
         padding:0 20px;
         margin-bottom:30px;
@@ -108,13 +110,17 @@ h4{
     @media #{$old-desk}{
         width:960px;
     }
+    
     @media #{$ipad}{
         width:720px;
     }
     @media (max-width: 767px) {
         width:540px;
     }
-    @media (max-width: 479px) {
+    @media #{$oldMobileLandscape}{
+        width:100%;
+    }
+    @media #{$mobilePortrait} {
         width:100%;
         max-width: 100%;
     }
@@ -151,7 +157,11 @@ h4{
                 margin-bottom: 0 !important;
             }
         }
-        @media (max-width: 479px) {
+        @media #{$oldMobileLandscape} {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        @media #{$mobilePortrait} {
             flex: 0 0 100%;
             max-width: 100%;
         }
@@ -161,9 +171,13 @@ h4{
         max-width: 33.33%;
         padding:0 15px;
         @media #{$smart-phone-landscape}{
-            margin-bottom: 0 !important;
+            margin-bottom: 0 !important; 
         }
-        @media (max-width: 479px) {
+        @media #{$oldMobileLandscape}{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        @media #{$mobilePortrait} {
             flex: 0 0 100%;
             max-width: 100%;
         }
@@ -176,7 +190,11 @@ h4{
             flex:0 0 100%;
             max-width: 100%;
         }
-        @media (max-width: 479px) {
+        @media #{$oldMobileLandscape} {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        @media #{$mobilePortrait} {
             flex: 0 0 100%;
             max-width: 100%;
         }
@@ -185,7 +203,7 @@ h4{
         flex:0 0 75%;
         max-width: 75%;
         padding:0 15px;
-        @media (max-width: 479px) {
+        @media #{$mobilePortrait} {
             flex: 0 0 100%;
             max-width: 100%;
         }
@@ -220,7 +238,7 @@ h4{
         padding:0 15px;
         flex: 0 0 100%;
         max-width: 100%;
-        @media (max-width: 479px) {
+        @media #{$mobilePortrait} {
             flex: 0 0 100%;
             max-width: 100%;
         }
@@ -274,7 +292,7 @@ header{
                 flex: 0 0 25%;
                 max-width: 25%;
             }
-            @media (max-width: 479px) {
+            @media #{$mobilePortrait} {
                 flex: 0 0 50%;
                 max-width: 50%;
             }
@@ -284,7 +302,11 @@ header{
                     flex: 0 0 50%;
                     max-width: 50%;
             }
-            @media (max-width: 479px) {
+            @media #{$oldMobileLandscape}{
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            @media #{$mobilePortrait} {
                 flex: 0 0 50%;
                 max-width: 50%;
             }
@@ -296,7 +318,10 @@ header{
         font-weight: 400;
         font-size: 16px;
         padding:9px 27.33px;
-        @media (max-width: 479px) {
+        @media #{$oldMobileLandscape}{
+            margin-right: 40px;
+        }
+        @media #{$mobilePortrait} {
             padding:8px;
             font-size:14px;
             margin-right: 40px;
@@ -491,6 +516,9 @@ header{
                 max-width: 100%;
                 text-align: center;
             }
+            @media (max-width: 767px) {
+                text-align: center;
+            }
         }
         @media #{$old-desk}{
             width:100%;
@@ -517,7 +545,7 @@ header{
                 font-size: 24px;
                 padding-right: 0;
             }
-            @media (max-width: 479px) {
+            @media #{$mobilePortrait} {
                 padding-right: 0;
                 font-size: 22px;
             }
@@ -532,7 +560,7 @@ header{
                 line-height: 24px;
                 margin-bottom: 10px;
             }
-            @media (max-width: 479px) {
+            @media #{$mobilePortrait} {
                 font-size: 18px;
             }
         }
@@ -700,7 +728,11 @@ input[type="radio"]:checked + label{
     .col-4{
         &:first-child{
             padding-right: 0;
-            @media (max-width: 479px) {
+            @media #{$oldMobileLandscape}{
+                padding:0;
+                margin-bottom: 20px;
+            }
+            @media #{$mobilePortrait} {
                padding:0;
                margin-bottom: 20px;
             }
@@ -711,7 +743,11 @@ input[type="radio"]:checked + label{
         }
         &:last-child{
             padding-left: 0;
-            @media (max-width: 479px) {
+            @media #{$oldMobileLandscape}{
+                padding:0;
+                margin-bottom: 20px;
+            }
+            @media #{$mobilePortrait} {
                 padding:0;
                 margin-top: 20px;
              }
@@ -796,7 +832,10 @@ input[type="radio"]:checked + label{
         @media #{$smart-phone-landscape}{
             font-size: 20px;
         }
-        @media (max-width: 479px) {
+        @media #{$oldMobileLandscape}{
+            font-size: 18px;
+        }
+        @media #{$mobilePortrait} {
             font-size: 18px;
          }
     }
@@ -820,10 +859,14 @@ input[type="radio"]:checked + label{
     }
     .inner{
         margin-bottom: 100px;
-        @media (max-width: 479px) {
+        @media #{$mobilePortrait} {
             text-align:Center;
             margin-bottom: 40px;
          }
+        @media #{$oldMobileLandscape}{
+            text-align:Center;
+            margin-bottom: 40px;
+        }
         
     }
     .iconHolder{
@@ -836,7 +879,10 @@ input[type="radio"]:checked + label{
         align-items: center;
         border-radius: 50%;
         margin-bottom: 20px;
-        @media (max-width: 479px) {
+        @media #{$oldMobileLandscape}{
+            margin: 0 auto 20px;
+        }
+        @media #{$mobilePortrait} {
             margin: 0 auto 20px;
          }
     }
@@ -870,11 +916,24 @@ input[type="radio"]:checked + label{
         @media #{$minipadToOlddesk}{
             text-align: center;
         }
-
+        @media (max-width: 767px) {
+            text-align: center;
+        }
+        @media #{$oldMobileLandscape}{
+            text-align: center;
+        }
     }
     .pl-20{
         padding-left: 20px;
         @media #{$minipadToOlddesk}{
+            padding-left: 0;
+            justify-content: center;
+        }
+        @media (max-width: 767px) {
+            padding-left: 0;
+            justify-content: center;
+        }
+        @media #{$oldMobileLandscape}{
             padding-left: 0;
             justify-content: center;
         }
@@ -899,7 +958,7 @@ input[type="radio"]:checked + label{
     }
     .col-6:nth-last-child(-n+2) .inner{
         margin-bottom: 0;
-        @media (max-width: 479px) {
+        @media #{$mobilePortrait} {
             margin-bottom: 40px;
          }
     }
@@ -975,6 +1034,26 @@ input[type="radio"]:checked + label{
             }
         }
         .topInfo{
+            .col-7{
+                @media (max-width: 767px) {
+                    flex: 0 0 58.333333%;
+                    max-width: 58.333333%;
+                }
+                @media #{$mobilePortrait} {
+                    flex: 0 0 58.333333%;
+                    max-width: 58.333333%;
+                }
+            }
+            .col-5{
+                @media (max-width: 767px) {
+                    flex: 0 0 41.666667%;
+                    max-width: 41.666667%;
+                }
+                @media #{$mobilePortrait} {
+                    flex: 0 0 41.666667%;
+                    max-width: 41.666667%;
+                }
+            }
             h5{
                 font-family: 'Roboto', sans-serif;
                 font-weight: 400;
@@ -1047,7 +1126,7 @@ input[type="radio"]:checked + label{
         .col-4{
             &:nth-child(2){
                 transform: translateY(-50%);
-                @media (max-width: 479px) {
+                @media #{$mobilePortrait} {
                     transform: translateY(0%);
                  }
                 .inner{
@@ -1156,12 +1235,12 @@ input[type="radio"]:checked + label{
                 margin-bottom: 15px;
                 &:nth-last-child(-n+2){
                     margin-bottom: 0;
-                    @media (max-width: 479px) {
+                    @media #{$mobilePortrait} {
                         margin-bottom: 15px;
                      }
                 }
                 &:last-child{
-                    @media (max-width: 479px) {
+                    @media #{$mobilePortrait} {
                         margin-bottom: 0px;
                      }
                 }
@@ -1204,7 +1283,7 @@ input[type="radio"]:checked + label{
          -webkit-border-radius: 4px;
          -moz-border-radius: 4px;
          border-radius: 4px;
-         @media (max-width: 479px) {
+         @media #{$mobilePortrait} {
             padding: 13px 10px 13px 30px;
             font-size:14px;
          } 
@@ -1229,7 +1308,7 @@ input[type="radio"]:checked + label{
         display: none; 
         color:#566573;
         line-height: 24px;
-        @media (max-width: 479px) {
+        @media #{$mobilePortrait} {
             padding: 20px 0;
          } 
     }
@@ -1248,7 +1327,7 @@ input[type="radio"]:checked + label{
     width: 14px;
     height: 8px;
     margin-right: 19px;
-    @media (max-width: 479px) {
+    @media #{$mobilePortrait} {
        position:absolute;
        left:10px;
        top:18px;
@@ -1314,16 +1393,17 @@ input[type="radio"]:checked + label{
     background: -webkit-linear-gradient(left,  #46a3e3 0%,#1d3067 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  #46a3e3 0%,#1d3067 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#46a3e3', endColorstr='#1d3067',GradientType=1 ); /* IE6-9 */
-    @media (max-width: 479px) {
+    @media #{$mobilePortrait} {
         padding:20px 0;
      }
      .row{
         @media #{$ipad}{
             justify-content:center;
         }
-        @media (max-width: 479px) {
+        @media (max-width: 767px) {
             justify-content:center;
-         } 
+        }
+       
      }
     h6{
         font-size: 30px;
@@ -1335,7 +1415,17 @@ input[type="radio"]:checked + label{
         @media #{$ipad}{
             padding:0 0 20px;
         }
-        @media (max-width: 479px) {
+        @media (max-width: 767px) {
+            padding:0 15px 20px;
+            font-size: 22px;
+            line-height: 28px;
+        }
+        @media #{$oldMobileLandscape} {
+            padding:0 15px 20px;
+            font-size: 22px;
+            line-height: 28px;
+        }
+        @media #{$mobilePortrait} {
             font-size: 18px;
             line-height: 24px;
             padding:0 15px 20px;
@@ -1406,9 +1496,16 @@ footer{
     p{
         font-size:14px;
         margin-bottom: 7px;
+        line-height: 18px;
         color:$content-color;
         &:last-child{
             margin:0;
+            @media #{$mobilePortrait} {
+                margin-top:10px;
+            }
+        }
+        @media #{$mobilePortrait} {
+            text-align: center;
         }
     }
 }
@@ -1472,7 +1569,7 @@ footer{
         width:20px;
         height:26px;
         left:0;
-        top:0;
+        top:5px;
         background-image:url(../img/spritesheet.png);
         background-repeat: no-repeat;
         background-position: -54px -57px;
@@ -1515,7 +1612,7 @@ footer{
     position: fixed;
     width:70px;
     bottom:20px;right:20px;
-    @media (max-width: 479px) {
+    @media (max-width: 767px) {
         display: none;
     }
     .telIcon{
@@ -1540,7 +1637,10 @@ footer{
     bottom:20px;
     left:20px;
     width:110px;
-    @media (max-width: 479px) {
+    @media #{$ipad} {
+        display: none;
+    }
+    @media (max-width: 767px) {
         display: none;
     }
     .closeBtn{
@@ -1659,4 +1759,11 @@ footer{
             padding-right:0;
         }
       }
+  }
+
+  #datetimepicker{
+    background-image: url(../img/angle.png);
+    background-repeat: no-repeat;
+    background-position: 97% 18px;
+    background-size:10px;
   }
